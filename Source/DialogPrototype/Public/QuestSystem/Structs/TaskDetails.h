@@ -14,7 +14,6 @@ struct FTaskDetails
 	TaskType(ETaskType::Location),
 	TaskQuantity(0),
 	bIsTaskOptional(false),
-	TaskCompleted(false),
 	XPGained(0),
 	MoneyGained(0)
 	{
@@ -37,9 +36,6 @@ struct FTaskDetails
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(DisplayName="Is Task Optional"))
 	bool bIsTaskOptional;
-	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(DisplayName="Task Completed"))
-	bool TaskCompleted;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(DisplayName="XP Gained"))
 	int32 XPGained;

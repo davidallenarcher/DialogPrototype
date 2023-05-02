@@ -13,16 +13,24 @@ class DIALOGPROTOTYPE_API AQuestBase : public AActor
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(DisplayName="Quest ID"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(DisplayName="Quest ID", ExposeOnSpawn))
 	FName QuestID;
 
 protected:
-	UPROPERTY(BlueprintReadOnly, meta=(DisplayName="Quest Details"))
+	UPROPERTY(BlueprintReadWrite, meta=(DisplayName="Quest Details"))
 	FQuestDetails QuestDetails;
 
-	UPROPERTY(BlueprintReadOnly, meta=(DisplayName="Current Stage"))
+	UPROPERTY(BlueprintReadWrite, meta=(DisplayName="Current Stage"))
 	int32 CurrentStage;
-	
+
+	UPROPERTY(BlueprintReadWrite, meta=(DisplayName="Current Stage Details"))
+	FStageDetails CurrentStageDetails;
+
+	UPROPERTY(BlueprintReadWrite, meta=(DisplayName="Current Task Progress"))
+	TMap<FString, int32> CurrentTaskProgress;
+
+	UPROPERTY(BlueprintReadWrite, meta=(DisplayName="Is Completed"))
+	bool bIsCompleted;
 public:	
 	// Sets default values for this actor's properties
 	AQuestBase();
